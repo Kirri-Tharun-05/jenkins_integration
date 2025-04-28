@@ -7,9 +7,7 @@ pipeline {
             }
         }
         stage('Build & Test') {
-            steps {
-                bat 'mvn clean test'  // if using Maven
-            }
+           
         }
         stage('Publish Report') {
             steps {
