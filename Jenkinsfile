@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/your-username/your-repo-name.git'
+                git branch: 'main', url: 'https://github.com/Kirri-Tharun-05/jenkins_integration.git'
             }
         }
         stage('Build & Test') {
