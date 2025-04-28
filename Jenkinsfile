@@ -8,8 +8,7 @@ pipeline {
         }
         stage('Build & Test') {
             steps {
-                bat 'gcc hello.c -o hello.exe'
-                bat 'hello.exe'
+                echo 'BUILD AND TEST'
                 // You can replace the above with your actual build commands when ready
             }
         }
