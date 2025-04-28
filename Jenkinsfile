@@ -8,19 +8,9 @@ pipeline {
         }
         stage('Build & Test') {
             steps {
-                echo 'mvn clean test'  // if using Maven
-            }
-        }
-        stage('Publish Report') {
-            steps {
-                publishHTML(target: [
-                    allowMissing: false,
-                    alwaysLinkToLastBuild: true,
-                    keepAll: true,
-                    reportDir: 'test-output/ExtentReports', 
-                    reportFiles: 'index.html', 
-                    reportName: 'Extent Report'
-                ])
+                bat 'echo Building the project'
+                bat 'echo Running Tests'
+                // You can replace the above with your actual build commands when ready
             }
         }
     }
@@ -28,7 +18,7 @@ pipeline {
         always {
             emailext (
                 subject: "Build ${currentBuild.fullDisplayName}",
-                body: "Please find the attached report.",
+                body: "Build finished.",
                 to: 'receiver@example.com',
                 attachLog: true
             )
