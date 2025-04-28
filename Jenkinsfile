@@ -7,7 +7,9 @@ pipeline {
             }
         }
         stage('Build & Test') {
-           
+            steps {
+                echo 'mvn clean test'  // if using Maven
+            }
         }
         stage('Publish Report') {
             steps {
